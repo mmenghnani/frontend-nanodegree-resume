@@ -83,7 +83,7 @@ var work = [{
 }];
 */
 
-$(div.work-entry).append(HTMLworkStart);
+$.append(HTMLworkStart);
 var formattedWorkStart = "January 2010 to present";
 
 var formattedEmployer = HTMLworkEmployer.replace("%data%","AppDirect");
