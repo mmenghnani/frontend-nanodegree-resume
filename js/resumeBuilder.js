@@ -60,13 +60,6 @@ var work = {
   //  "display" : "true"
     };
 
-/*var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';acl
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>'; */
-
 $("#workExperience").append(HTMLworkStart);
 
 for(var i = 0; i<3 ;i ++){
@@ -83,7 +76,7 @@ for(var i = 0; i<3 ;i ++){
     $(".work-entry").append(formattedworkLocation);
 
     var formattedworkDescription = HTMLworkDescription.replace("%data%",work.jobs[i].description);
-    $(".work-entry").append(formattedworkDescription);
+    $(".work-entry").append(formattedworkDescription); //Work
 }
 
 var projects = {
@@ -138,7 +131,7 @@ for(var i = 0; i<2; i++){
     $(".education-entry").append(formattedSchoolDegree);
 
     var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[i].dates)
-    $(".education-entry").append(formattedSchoolDates);
+    $(".education-entry").append(formattedSchoolDates); //Education - Including colleges
 }
 
 $(".education-entry").append(HTMLonlineClasses);
@@ -155,16 +148,11 @@ for(var i=0; i<2; i++){
     $(".education-entry").append(formattedOnlineDates);
 
     var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[i].URL)
-    $(".education-entry").append(formattedOnlineURL);
+    $(".education-entry").append(formattedOnlineURL); //Education - Online Classes
 }
 
 
-
-
-
-
-
-
+$("#mapDiv").append(googleMap);
 
 
 
