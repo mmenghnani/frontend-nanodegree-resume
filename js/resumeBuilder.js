@@ -108,13 +108,13 @@ var projects = {
     "project": [{
             "title": "Library Management System",
             "dates": "Feb 2015",
-            "description": "asdasdasd asdasd adsasdad",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac ornare quam. Nunc eros nunc, convallis tempor eros at, facilisis finibus magna. Curabitur finibus elementum leo, in vulputate libero efficitur ut. Ut in lacus metus.",
             "images": ["https://goo.gl/a2yj7s", "https://goo.gl/a2yj7s", "https://goo.gl/a2yj7s"]
         },
         {
             "title": "File Transactions in the Cloud",
             "dates": "Present",
-            "description": "asdasd asdasd asdasdasdasd",
+            "description": "Nullam sed est finibus, tincidunt nibh id, molestie magna. Etiam tempus fermentum nulla non tincidunt. Aenean iaculis eros placerat nulla ultricies, ut dapibus tellus imperdiet. Mauris sed feugiat diam. Nullam nulla arcu, fermentum at rutrum nec, ultricies sed orci.",
             "images": ["https://goo.gl/a2yj7s", "https://goo.gl/a2yj7s", "https://goo.gl/a2yj7s", "https://goo.gl/a2yj7s"]
         }
     ]
