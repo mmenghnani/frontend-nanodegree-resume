@@ -1,7 +1,7 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
-// Bio Section
+// Bio Section starts here
 var bio = {
       "name" : "Mohit Menghnani",
       "role" : "Front End Engineer",
@@ -55,7 +55,7 @@ while(bio.skills[i])
     i++;
 }
 
-
+//Work Experience section starts here
 var work = {
     "jobs": [{
             "employer": "AppDirect",
@@ -82,10 +82,9 @@ var work = {
     //  "display" : "true"
 };
 $("#workExperience").append(HTMLworkStart);
-
-//for(var i = 0; i<3 ;i ++){
 var i = 0;
 while(work.jobs[i])
+//forEach()
 {
     var formattedworkEmployer = HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
     $(".work-entry").append(formattedworkEmployer);
@@ -104,6 +103,7 @@ while(work.jobs[i])
     i++;
 }
 
+//Projects Section Starts here
 var projects = {
     "project": [{
             "title": "Library Management System",
@@ -119,10 +119,7 @@ var projects = {
         }
     ]
 };
-
 $("#projects").append(HTMLprojectStart);
-
-//for(var i = 0; i < 2; i++){
 var i = 0;
 while(projects.project[i])
 {
@@ -144,6 +141,7 @@ while(projects.project[i])
   i++;
   }
 
+//Education Section Starts here
 var education = {
     "schools": [{
             "name": "University of Florida",
@@ -177,7 +175,6 @@ var education = {
 };
 
 $("#education").append(HTMLschoolStart);
-
 var i = 0;
 while(education.schools[i]){
     var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[i].name);
@@ -204,9 +201,8 @@ while(education.schools[i]){
     i++;
 }
 
+//Online Classes Section Starts here
 $(".education-entry").append(HTMLonlineClasses);
-
-//for(var i=0; i<2; i++){
 var j = 0;
 while(education.schools[j]){
 
@@ -225,7 +221,7 @@ while(education.schools[j]){
     j++;
 }
 
-//Adding Maps to the page.
+//Adding Maps
 $("#mapDiv").append(googleMap);
 
 
