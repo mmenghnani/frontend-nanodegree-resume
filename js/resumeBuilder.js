@@ -177,6 +177,7 @@ var education = {
     ],
     "displayEducation": function() {
         $("#education").append(HTMLschoolStart);
+
         var i = 0;
         while (education.schools[i]) {
             var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
@@ -201,10 +202,12 @@ var education = {
             i++;
         }
 
+        $(HTMLonlineClasses).insertAfter( ".education-entry" );
+
+
         //Online Classes Section Starts here
-        $(".education-entry").append(HTMLonlineClasses);
         var j = 0;
-        while (education.schools[j]) {
+        while (education.onlineCourses[j]) {
 
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[j].title);
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[j].school);
@@ -215,8 +218,7 @@ var education = {
             $(".education-entry").append(formattedOnlineDates);
 
             var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[j].URL)
-            $(".education-entry").append(formattedOnlineURL); //Education - Online Classes
-
+            $(".education-entry").append(formattedOnlineURL);
             j++;
         }
     }
