@@ -12,7 +12,7 @@ var bio = {
         "twitter": "theproductguy89",
         "location": "San Francisco"
     },
-    "welcomeMessage": "I am the best front end Engineer",
+    "welcomeMessage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "skills": ["swimming", "lawn tennis", "clubbing"],
     "biopic": "https://goo.gl/eDsbmR",
     "displayBio": function() {
@@ -60,8 +60,6 @@ var bio = {
 
 };
 
-
-
 //Work Experience section starts here
 var work = {
     "jobs": [{
@@ -108,7 +106,6 @@ var work = {
     }
 };
 
-
 //Projects Section Starts here
 var projects = {
     "project": [{
@@ -148,7 +145,6 @@ var projects = {
     }
 };
 
-
 //Education Section Starts here
 var education = {
     "schools": [{
@@ -185,7 +181,7 @@ var education = {
         while (education.schools[i]) {
             var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-            var substring = formattedSchoolName + formattedSchoolDegree;
+            var substring = formattedSchoolName + formattedSchoolDegree;//Joining School Name and School Degree in one string before displaying them so that they are added within the same element
             $(".education-entry").append(substring);
 
 
@@ -212,7 +208,7 @@ var education = {
 
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[j].title);
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[j].school);
-            var substring = formattedOnlineTitle + formattedOnlineSchool;
+            var substring = formattedOnlineTitle + formattedOnlineSchool;//Joining Online School and Title in one string before displaying them so that they are added within the same element
             $(".education-entry").append(substring);
 
             var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[j].dates);
@@ -226,11 +222,17 @@ var education = {
     }
 
 };
+// Calling the display function for bio
 bio.displayBio();
-education.displayEducation();
-projects.displayProjects();
-work.displayWork();
 
+// Calling the display function for education
+education.displayEducation();
+
+// Calling the display function for projects
+projects.displayProjects();
+
+// Calling the display function for work
+work.displayWork();
 
 //Adding Maps
 $("#mapDiv").append(googleMap);
