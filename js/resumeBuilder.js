@@ -88,19 +88,19 @@ var work = {
         $("#workExperience").append(HTMLworkStart);
         var i = 0;
         while (work.jobs[i]) {
-            var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
-            var formattedworkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-            var substring = formattedworkEmployer + formattedworkTitle; //Joining employer name and title in one string before displaying them so that they are added within the same element
+            var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+            var substring = formattedWorkEmployer + formattedWorkTitle; //Joining employer name and title in one string before displaying them so that they are added within the same element
             $(".work-entry").append(substring);
 
-            var formattedworkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
-            $(".work-entry").append(formattedworkDates);
+            var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+            $(".work-entry").append(formattedWorkDates);
 
-            var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
-            $(".work-entry").append(formattedworkLocation);
+            var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+            $(".work-entry").append(formattedWorkLocation);
 
-            var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
-            $(".work-entry").append(formattedworkDescription); //Work
+            var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+            $(".work-entry").append(formattedWorkDescription); //Work
             i++;
         }
     }
@@ -178,6 +178,7 @@ var education = {
     "displayEducation": function() {
         $("#education").append(HTMLschoolStart);
 
+
         var i = 0;
         while (education.schools[i]) {
             var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
@@ -188,6 +189,7 @@ var education = {
 
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
             $(".education-entry").append(formattedSchoolLocation);
+
 
 
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
@@ -202,7 +204,11 @@ var education = {
             i++;
         }
 
-        $(HTMLonlineClasses).insertAfter( ".education-entry" );
+         //Adding Heading for Online Courses
+         $(".education-entry").append(HTMLonlineClasses);
+
+         //Removing Padding inherited from the education-entry class
+         $('#education .education-entry h3').css('padding-left','0px');
 
 
         //Online Classes Section Starts here
