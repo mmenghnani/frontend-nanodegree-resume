@@ -90,8 +90,8 @@ var work = {
         while (work.jobs[i]) {
             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
             var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-            var substring = formattedWorkEmployer + formattedWorkTitle; //Joining employer name and title in one string before displaying them so that they are added within the same element
-            $(".work-entry").append(substring);
+            var substringWork = formattedWorkEmployer + formattedWorkTitle; //Joining employer name and title in one string before displaying them so that they are added within the same element
+            $(".work-entry").append(substringWork);
 
             var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
             $(".work-entry").append(formattedWorkDates);
@@ -183,8 +183,8 @@ var education = {
         while (education.schools[i]) {
             var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-            var substring = formattedSchoolName + formattedSchoolDegree;//Joining School Name and School Degree in one string before displaying them so that they are added within the same element
-            $(".education-entry").append(substring);
+            var substringSchool = formattedSchoolName + formattedSchoolDegree;//Joining School Name and School Degree in one string before displaying them so that they are added within the same element
+            $(".education-entry").append(substringSchool);
 
 
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
@@ -217,13 +217,13 @@ var education = {
 
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[j].title);
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[j].school);
-            var substring = formattedOnlineTitle + formattedOnlineSchool;//Joining Online School and Title in one string before displaying them so that they are added within the same element
-            $(".education-entry").append(substring);
+            var substringOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;//Joining Online School and Title in one string before displaying them so that they are added within the same element
+            $(".education-entry").append(substringOnlineSchool);
 
             var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[j].dates);
             $(".education-entry").append(formattedOnlineDates);
 
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[j].URL)
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[j].URL);
             $(".education-entry").append(formattedOnlineURL);
             j++;
         }
