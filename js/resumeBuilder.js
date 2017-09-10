@@ -12,34 +12,31 @@ var bio = {
         "twitter": "theproductguy89",
         "location": "San Francisco"
     },
+
     "welcomeMessage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+
     "skills": ["swimming", "lawn tennis", "clubbing"],
+
     "biopic": "https://goo.gl/eDsbmR",
+
     "display": function() {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         $("#header").prepend(formattedName, formattedRole);
 
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-
         var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        $("#topContacts, #footerContacts").append(formattedMobile,formattedEmail,formattedTwitter,formattedLocation,formattedGithub);
+        $("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedTwitter, formattedLocation, formattedGithub);
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-
         var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        $("#header").append(formattedBioPic,formattedMsg,HTMLskillsStart);
-
-      //  $("#header").append(HTMLskillsStart);
+        $("#header").append(formattedBioPic, formattedMsg, HTMLskillsStart);
 
         //Print skills
-        bio.skills.forEach(function(skill){
+        bio.skills.forEach(function(skill) {
             var formattedSkills = HTMLskills.replace("%data%", skill);
             $("#header").append(formattedSkills);
         });
@@ -74,7 +71,7 @@ var work = {
     "display": function() {
         $("#workExperience").append(HTMLworkStart);
 
-        work.jobs.forEach(function(job){
+        work.jobs.forEach(function(job) {
             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", job.employer);
             var formattedWorkTitle = HTMLworkTitle.replace("%data%", job.title);
             var substringWork = formattedWorkEmployer + formattedWorkTitle; //Joining employer name and title in one string before displaying them so that they are added within the same element
@@ -82,14 +79,14 @@ var work = {
             var formattedWorkLocation = HTMLworkLocation.replace("%data%", job.location);
             var formattedWorkDescription = HTMLworkDescription.replace("%data%", job.description);
 
-            $(".work-entry").append(substringWork,formattedWorkDates,formattedWorkLocation,formattedWorkDescription);
+            $(".work-entry").append(substringWork, formattedWorkDates, formattedWorkLocation, formattedWorkDescription);
         });
     }
 };
 
 //Projects Section Starts here
 var projects = {
-    "project": [{
+    "projects": [{
             "title": "Library Management System",
             "dates": "Feb 2015",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac ornare quam. Nunc eros nunc, convallis tempor eros at, facilisis finibus magna. Curabitur finibus elementum leo, in vulputate libero efficitur ut. Ut in lacus metus.",
@@ -104,12 +101,12 @@ var projects = {
     ],
     "display": function() {
         $("#projects").append(HTMLprojectStart);
-        projects.project.forEach(function(project){
+        projects.projects.forEach(function(project) {
             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
             var formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
-            $(".project-entry").append(formattedProjectTitle,formattedProjectDates,formattedProjectDescription);
-            project.images.forEach(function(image){
+            $(".project-entry").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription);
+            project.images.forEach(function(image) {
                 var formattedProjectImages = HTMLprojectImage.replace("%data%", image);
                 $(".project-entry").append(formattedProjectImages);
             });
@@ -138,47 +135,47 @@ var education = {
             "title": "Java Programming",
             "school": "University of Michigan",
             "dates": "July 2015",
-            "URL": "https://www.umichigan.edu"
+            "url": "https://www.umichigan.edu"
         },
         {
             "title": "FrontEnd Nanodegree",
             "school": "Udacity",
             "dates": "December 2017",
-            "URL": "https://www.udacity.com"
+            "url": "https://www.udacity.com"
         }
     ],
     "display": function() {
         $("#education").append(HTMLschoolStart);
-            education.schools.forEach(function(school){
-                   var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
-                   var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
-                   var substringSchool = formattedSchoolName + formattedSchoolDegree;//Joining School Name and School Degree in one string before displaying them so that they are added within the same elementum
-                   var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
-                   var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
-                   $(".education-entry").append(substringSchool,formattedSchoolLocation,formattedSchoolDates); //Education - Including colleges
+        education.schools.forEach(function(school) {
+            var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
+            var substringSchool = formattedSchoolName + formattedSchoolDegree; //Joining School Name and School Degree in one string before displaying them so that they are added within the same elementum
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
+            $(".education-entry").append(substringSchool, formattedSchoolLocation, formattedSchoolDates); //Education - Including colleges
 
-                school.majors.forEach(function(major){
-                    var formattedMajorName = HTMLschoolMajor.replace("%data%", major);
+            school.majors.forEach(function(major) {
+                var formattedMajorName = HTMLschoolMajor.replace("%data%", major);
                 $(".education-entry").append(formattedMajorName);
-                });
-
             });
 
+        });
 
-         //Adding Heading for Online Courses
-         $(".education-entry").append(HTMLonlineClasses);
 
-         //Removing Padding inherited from the education-entry class
-         $('#education .education-entry h3').css('padding-left','0px');
-         education.onlineCourses.forEach(function(course){
+        //Adding Heading for Online Courses
+        $(".education-entry").append(HTMLonlineClasses);
+
+        //Removing Padding inherited from the education-entry class
+        $('#education .education-entry h3').css('padding-left', '0px');
+        education.onlineCourses.forEach(function(course) {
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
-            var substringOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;//Joining Online School and Title in one string before displaying them so that they are added within the same element
+            var substringOnlineSchool = formattedOnlineTitle + formattedOnlineSchool; //Joining Online School and Title in one string before displaying them so that they are added within the same element
 
             var formattedOnlineDates = HTMLonlineDates.replace("%data%", course.dates);
 
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", course.URL);
-            $(".education-entry").append(substringOnlineSchool,formattedOnlineDates,formattedOnlineURL);
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", course.url);
+            $(".education-entry").append(substringOnlineSchool, formattedOnlineDates, formattedOnlineURL);
 
         });
     }
